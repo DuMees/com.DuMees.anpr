@@ -24,8 +24,8 @@ const qs = require('querystring');
 const Queue = require('smart-request-balancer');
 // const util = require('util');
 
-const APIHost = 'api.platerecognizer.com';
-const detectLPlateEP = '/v1/plate-reader/';
+const APIHost = '192.168.0.44';
+const detectLPlateEP = '/detect/';
 const statisticsEP = '/v1/statistics/';
 
 const parse = (data) => {
@@ -42,7 +42,7 @@ class ANPR {
 	constructor(opts) {
 		const options = opts || {};
 		this.host = options.host || APIHost;
-		this.port = options.port || 443;
+		this.port = options.port || 3000;
 		this.timeout = options.timeout || 10000;
 		this.apiKeys = options.apiKeys || [];
 		this.apiKeyIndex = 0;
